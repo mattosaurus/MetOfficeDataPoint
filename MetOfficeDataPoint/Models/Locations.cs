@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MetOfficeDataPoint
+namespace MetOfficeDataPoint.Models
 {
-    public class Class1
+    public class Locations
     {
-        public Class1()
-        {
-        }
+        public List<Location> Location { get; set; }
     }
 }
