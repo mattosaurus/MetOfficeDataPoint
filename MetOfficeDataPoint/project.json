@@ -1,4 +1,6 @@
 {
+  "title": "MetOfficeDataPoint",
+  "description": "A .NET Core class library for accessing the Met Office DataPoint API",
   "version": "1.0.0-*",
 
   "dependencies": {
@@ -10,5 +12,11 @@
     "netstandard1.6": {
       "imports": "dnxcore50"
     }
+  },
+
+  "scripts": {
+    "postcompile": [
+      "dotnet pack --no-build --configuration %compile:Configuration%"
+    ]
   }
 }
