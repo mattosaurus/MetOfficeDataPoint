@@ -108,7 +108,7 @@ namespace MetOfficeDataPoint
             MetOfficeDataPointClient client = new MetOfficeDataPointClient(_apiKey);
 
             // Get all sites
-            SiteListResponse siteListResponse = client.GetAllSites().Result;
+            SiteListResponse siteListResponse = await client.GetAllSites();
 
             // Find nearest coordinates
             GeoCoordinate nearest = siteListResponse.Locations.Location.Select(x => new GeoCoordinate(x.Latitude, x.Longitude)).OrderBy(x => x.GetDistanceTo(coordinate)).First();
