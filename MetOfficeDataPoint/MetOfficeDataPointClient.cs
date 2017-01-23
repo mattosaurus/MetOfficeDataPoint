@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using GeoCoordinatePortable;
 
 namespace MetOfficeDataPoint
 {
@@ -99,6 +100,23 @@ namespace MetOfficeDataPoint
 
                 return forecastResponse;
             }
+        }
+
+        public async Task<Location> GetClosestSite(GeoCoordinate coordinate)
+        {
+            // Create client
+            MetOfficeDataPointClient client = new MetOfficeDataPointClient(_apiKey);
+
+            // Get all sites
+            SiteListResponse siteListResponse = client.GetAllSites().Result;
+
+            // Find nearest coordinates
+            GeoCoordinate nearest = siteListResponse.Locations.Location.Select(x => new GeoCoordinate(x.Latitude, x.Longitude)).OrderBy(x => x.GetDistanceTo(coordinate)).First();
+
+            // Find site matching nearest coordinates
+            Location location = siteListResponse.Locations.Location.Find(x => x.Latitude == nearest.Latitude && x.Longitude == nearest.Longitude);
+
+            return location;
         }
     }
 }
