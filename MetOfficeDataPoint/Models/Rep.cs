@@ -41,7 +41,7 @@ namespace MetOfficeDataPoint.Models
         /// <summary>
         /// The value of a Rep object ($ in the JSON representation) denotes the number of minutes after midnight GMT on the day represented by the Period object in which the Rep object is found
         /// </summary>
-        //[JsonProperty("$")]
-        //public int MinutesAfterMidnight { get; set; }
-}
+        [JsonProperty("$")]
+        public int MinutesAfterMidnight { get; set; }
+    }
 }
