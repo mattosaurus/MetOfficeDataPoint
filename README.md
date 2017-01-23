@@ -37,6 +37,9 @@ The below code can be used in a .NET Core project, a test project is also includ
 
             // Get all forecasts
             ForecastResponse forecastResponse = client.GetForecasts().Result;
+            
+            // Get historical observations
+            ForecastResponse historicalResponse = client.GetHistoricalObservations().Result;
         }
     }
 ```
