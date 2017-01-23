@@ -53,11 +53,11 @@ namespace MetOfficeDataPoint
 
             if (locationId > 0)
             {
-                url = "http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/json/" + locationId.ToString() +  "?res=" + resolution + "&key=" + _apiKey;
+                url += locationId.ToString() +  "?res=" + resolution + "&key=" + _apiKey;
             }
             else
             {
-                url = "http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/json/all?res=" + resolution + "&key=" + _apiKey;
+                url += "all?res=" + resolution + "&key=" + _apiKey;
             }
 
             if (!string.IsNullOrEmpty(time))
@@ -70,6 +70,31 @@ namespace MetOfficeDataPoint
                 HttpResponseMessage response = await client.GetAsync(new Uri(url));
 
                 response.EnsureSuccessStatusCode();
+                ForecastResponse forecastResponse = JsonConvert.DeserializeObject<ForecastResponse>(await response.Content.ReadAsStringAsync());
+
+                return forecastResponse;
+            }
+        }
+
+        public async Task<ForecastResponse> GetHistoricalObservations(string resolution = "hourly", int locationId = 0)
+        {
+            string url = "http://datapoint.metoffice.gov.uk/public/data/val/wxobs/all/json/";
+
+            if (locationId > 0)
+            {
+                url += locationId.ToString() + "?res=" + resolution + "&key=" + _apiKey;
+            }
+            else
+            {
+                url += "all/?res=" + resolution + "&key=" + _apiKey;
+            }
+
+            using (HttpClient client = new HttpClient())
+            {
+                HttpResponseMessage response = await client.GetAsync(new Uri(url));
+
+                response.EnsureSuccessStatusCode();
+                string test = await response.Content.ReadAsStringAsync();
                 ForecastResponse forecastResponse = JsonConvert.DeserializeObject<ForecastResponse>(await response.Content.ReadAsStringAsync());
 
                 return forecastResponse;

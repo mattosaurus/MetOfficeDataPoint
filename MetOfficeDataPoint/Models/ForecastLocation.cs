@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MetOfficeDataPoint.Helpers;
 
 namespace MetOfficeDataPoint.Models
 {
@@ -30,6 +31,7 @@ namespace MetOfficeDataPoint.Models
         public double Elevation { get; set; }
 
         [JsonProperty("Period")]
+        [JsonConverter(typeof(SingleOrArrayConverter<Period>))]
         public List<Period> Period { get; set; }
     }
 }

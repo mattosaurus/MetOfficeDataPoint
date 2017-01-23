@@ -18,7 +18,7 @@ namespace MetOfficeDataPoint.Models
         public int WindGust { get; set; }
 
         [JsonProperty("H")]
-        public int ScreenRelativeHumidity { get; set; }
+        public double ScreenRelativeHumidity { get; set; }
 
         [JsonProperty("Pp")]
         public int PrecipitationProbability { get; set; }
@@ -27,7 +27,7 @@ namespace MetOfficeDataPoint.Models
         public int WindSpeed { get; set; }
 
         [JsonProperty("T")]
-        public int Temperature { get; set; }
+        public double Temperature { get; set; }
 
         [JsonProperty("V")]
         public string Visibility { get; set; }
