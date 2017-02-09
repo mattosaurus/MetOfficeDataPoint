@@ -14,9 +14,12 @@ Add the following namespaces to use the library:
 ```C#
 using MetOfficeDataPoint;
 using MetOfficeDataPoint.Models;
+using GeoCoordinatePortable;
 ```
 # Dependencies
 A DataPoint account and API key are required for use, registration is free and can be done <a href="http://www.metoffice.gov.uk/datapoint/" alt="Met Office DataPoint">here</a>.
+
+<a href="https://www.nuget.org/packages/GeoCoordinate.NetCore/" alt = "GeoCoordinate.NetCore">GeoCoordinate.NetCore</a> is required to determine the closest weather site.
 
 # Usage
 The below code can be used in a .NET Core project, a test project is also included in the GitHub solution.
@@ -40,6 +43,10 @@ The below code can be used in a .NET Core project, a test project is also includ
             
             // Get historical observations
             ForecastResponse historicalResponse = client.GetHistoricalObservations().Result;
+            
+            // Get closest site
+            GeoCoordinate coordinate = new GeoCoordinate(51.508363, -0.163006);
+            Location location = client.GetClosestSite(coordinate).Result;
         }
     }
 ```
