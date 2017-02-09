@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using MetOfficeDataPoint.Helpers;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace MetOfficeDataPoint.Models
         [JsonProperty("type")]
         public string Type { get; set; }
 
+        [JsonConverter(typeof(SingleOrArrayConverter<ForecastLocation>))]
         public List<ForecastLocation> Location { get; set; }
     }
 }
