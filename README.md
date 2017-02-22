@@ -50,3 +50,5 @@ The below code can be used in a .NET Core project, a test project is also includ
         }
     }
 ```
+# Example
+See <a href="https://bitscry.com/Projects/Weather" alt="bitscry weather">here</a> for an example of this in action with the weather status matched to corresponding <a href="https://erikflowers.github.io/weather-icons/" alt="weather icons">weather icons</a>.
