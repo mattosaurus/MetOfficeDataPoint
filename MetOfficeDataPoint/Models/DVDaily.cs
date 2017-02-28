@@ -16,6 +16,7 @@ namespace MetOfficeDataPoint.Models
         public string Type { get; set; }
 
         [JsonProperty("Location")]
-        public ForecastLocationDaily Location { get; set; }
+        [JsonConverter(typeof(SingleOrArrayConverter<ForecastLocationDaily>))]
+        public List<ForecastLocationDaily> Location { get; set; }
     }
 }

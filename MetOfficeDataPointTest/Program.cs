@@ -13,7 +13,7 @@ namespace MetOfficeDataPointTest
         public static void Main(string[] args)
         {
             // Create client
-            MetOfficeDataPointClient client = new MetOfficeDataPointClient("[TOKEN}");
+            MetOfficeDataPointClient client = new MetOfficeDataPointClient("78b6eede-0692-433c-a35b-154332355218");
 
             // Get all sites
             SiteListResponse siteListResponse = client.GetAllSites().Result;
