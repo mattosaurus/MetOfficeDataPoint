@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MetOfficeDataPoint.Models
 {
-    public class DV
+    public class DVDaily
     {
         [JsonProperty("dataDate")]
         public string DataDate { get; set; }
@@ -15,7 +15,7 @@ namespace MetOfficeDataPoint.Models
         [JsonProperty("type")]
         public string Type { get; set; }
 
-        [JsonConverter(typeof(SingleOrArrayConverter<ForecastLocation>))]
-        public List<ForecastLocation> Location { get; set; }
+        [JsonProperty("Location")]
+        public ForecastLocationDaily Location { get; set; }
     }
 }

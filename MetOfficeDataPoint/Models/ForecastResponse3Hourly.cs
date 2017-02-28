@@ -5,10 +5,8 @@ using System.Threading.Tasks;
 
 namespace MetOfficeDataPoint.Models
 {
-    public class SiteRep
+    public class ForecastResponse3Hourly
     {
-        public Wx Wx { get; set; }
-
-        public DV DV { get; set; }
+        public SiteRep3Hourly SiteRep { get; set; }
     }
 }

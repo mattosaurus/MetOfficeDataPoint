@@ -7,7 +7,7 @@ using MetOfficeDataPoint.Helpers;
 
 namespace MetOfficeDataPoint.Models
 {
-    public class ForecastLocation
+    public class ForecastLocationDaily
     {
         [JsonProperty("i")]
         public int LocationId { get; set; }
@@ -31,7 +31,6 @@ namespace MetOfficeDataPoint.Models
         public double Elevation { get; set; }
 
         [JsonProperty("Period")]
-        [JsonConverter(typeof(SingleOrArrayConverter<Period>))]
-        public List<Period> Period { get; set; }
+        public List<PeriodDaily> Period { get; set; }
     }
 }

@@ -48,17 +48,17 @@ namespace MetOfficeDataPoint
             }
         }
 
-        public async Task<ForecastResponse> GetForecasts(string resolution = "3hourly", string time = null, int locationId = 0)
+        public async Task<ForecastResponse3Hourly> GetForecasts3Hourly(string time = null, int locationId = 0)
         {
             string url = "http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/json/";
 
             if (locationId > 0)
             {
-                url += locationId.ToString() +  "?res=" + resolution + "&key=" + _apiKey;
+                url += locationId.ToString() + "?res=3hourly" + "&key=" + _apiKey;
             }
             else
             {
-                url += "all?res=" + resolution + "&key=" + _apiKey;
+                url += "all?res=3hourly" + "&key=" + _apiKey;
             }
 
             if (!string.IsNullOrEmpty(time))
@@ -71,13 +71,37 @@ namespace MetOfficeDataPoint
                 HttpResponseMessage response = await client.GetAsync(new Uri(url));
 
                 response.EnsureSuccessStatusCode();
-                ForecastResponse forecastResponse = JsonConvert.DeserializeObject<ForecastResponse>(await response.Content.ReadAsStringAsync());
+                ForecastResponse3Hourly forecastResponse = JsonConvert.DeserializeObject<ForecastResponse3Hourly>(await response.Content.ReadAsStringAsync());
 
                 return forecastResponse;
             }
         }
 
-        public async Task<ForecastResponse> GetHistoricalObservations(string resolution = "hourly", int locationId = 0)
+        public async Task<ForecastResponseDaily> GetForecastsDaily(int locationId = 0)
+        {
+            string url = "http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/json/";
+
+            if (locationId > 0)
+            {
+                url += locationId.ToString() + "?res=daily" + "&key=" + _apiKey;
+            }
+            else
+            {
+                url += "all?res=daily" + "&key=" + _apiKey;
+            }
+
+            using (HttpClient client = new HttpClient())
+            {
+                HttpResponseMessage response = await client.GetAsync(new Uri(url));
+
+                response.EnsureSuccessStatusCode();
+                ForecastResponseDaily forecastResponse = JsonConvert.DeserializeObject<ForecastResponseDaily>(await response.Content.ReadAsStringAsync());
+
+                return forecastResponse;
+            }
+        }
+
+        public async Task<ForecastResponse3Hourly> GetHistoricalObservations(string resolution = "hourly", int locationId = 0)
         {
             string url = "http://datapoint.metoffice.gov.uk/public/data/val/wxobs/all/json/";
 
@@ -96,7 +120,7 @@ namespace MetOfficeDataPoint
 
                 response.EnsureSuccessStatusCode();
                 string test = await response.Content.ReadAsStringAsync();
-                ForecastResponse forecastResponse = JsonConvert.DeserializeObject<ForecastResponse>(await response.Content.ReadAsStringAsync());
+                ForecastResponse3Hourly forecastResponse = JsonConvert.DeserializeObject<ForecastResponse3Hourly>(await response.Content.ReadAsStringAsync());
 
                 return forecastResponse;
             }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MetOfficeDataPoint.Models
 {
-    public class Period
+    public class Period3Hourly
     {
         [JsonProperty("type")]
         public string Type { get; set; }
@@ -14,6 +14,6 @@ namespace MetOfficeDataPoint.Models
         [JsonProperty("value")]
         public string Value { get; set; }
 
-        public List<Rep> Rep { get; set; }
+        public List<Rep3Hourly> Rep { get; set; }
     }
 }

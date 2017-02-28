@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MetOfficeDataPoint.Models
 {
-    public class Rep
+    public class Rep3Hourly : RepDaily
     {
         [JsonProperty("D")]
         public string WindDirection { get; set; }
