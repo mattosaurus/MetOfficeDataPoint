@@ -30,7 +30,7 @@ The below code can be used in a .NET Core project, a test project is also includ
         public static void Main(string[] args)
         {
             // Create client
-            MetOfficeDataPointClient client = new MetOfficeDataPointClient("{APIKEY}");
+            MetOfficeDataPointClient client = new MetOfficeDataPointClient("{TOKEN}");
 
             // Get all sites
             SiteListResponse siteListResponse = client.GetAllSites().Result;
@@ -38,8 +38,11 @@ The below code can be used in a .NET Core project, a test project is also includ
             // Get available forcasts
             AvailableTimeStampsResponse availableTimeStampsResponse = client.GetAvailableTimestamps().Result;
 
-            // Get all forecasts
-            ForecastResponse forecastResponse = client.GetForecasts().Result;
+            // Get all 3 hourly forecasts
+            ForecastResponse3Hourly forecastResponse3Hourly = client.GetForecasts3Hourly().Result;
+
+            // Get daily forecasts for site 14
+            ForecastResponseDaily forecastResponseDaily = client.GetForecastsDaily(14).Result;
             
             // Get historical observations
             ForecastResponse historicalResponse = client.GetHistoricalObservations().Result;
