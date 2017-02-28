@@ -1,4 +1,5 @@
-﻿using MetOfficeDataPoint;
+﻿using GeoCoordinatePortable;
+using MetOfficeDataPoint;
 using MetOfficeDataPoint.Models;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace MetOfficeDataPointTest
         public static void Main(string[] args)
         {
             // Create client
-            MetOfficeDataPointClient client = new MetOfficeDataPointClient("{TOKEN}");
+            MetOfficeDataPointClient client = new MetOfficeDataPointClient("[TOKEN}");
 
             // Get all sites
             SiteListResponse siteListResponse = client.GetAllSites().Result;
@@ -23,8 +24,15 @@ namespace MetOfficeDataPointTest
             // Get all 3 hourly forecasts
             ForecastResponse3Hourly forecastResponse3Hourly = client.GetForecasts3Hourly().Result;
 
-            // Get all daily forecasts
+            // Get daily forecasts for site 14
             ForecastResponseDaily forecastResponseDaily = client.GetForecastsDaily(14).Result;
+
+            // Get historical observations
+            ForecastResponse3Hourly historicalResponse = client.GetHistoricalObservations().Result;
+
+            // Get closest site
+            GeoCoordinate coordinate = new GeoCoordinate(51.508363, -0.163006);
+            Location location = client.GetClosestSite(coordinate).Result;
         }
     }
 }
