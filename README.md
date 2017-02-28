@@ -30,7 +30,7 @@ The below code can be used in a .NET Core project, a test project is also includ
         public static void Main(string[] args)
         {
             // Create client
-            MetOfficeDataPointClient client = new MetOfficeDataPointClient("{TOKEN}");
+            MetOfficeDataPointClient client = new MetOfficeDataPointClient("[TOKEN}");
 
             // Get all sites
             SiteListResponse siteListResponse = client.GetAllSites().Result;
@@ -43,10 +43,10 @@ The below code can be used in a .NET Core project, a test project is also includ
 
             // Get daily forecasts for site 14
             ForecastResponseDaily forecastResponseDaily = client.GetForecastsDaily(14).Result;
-            
+
             // Get historical observations
-            ForecastResponse historicalResponse = client.GetHistoricalObservations().Result;
-            
+            ForecastResponse3Hourly historicalResponse = client.GetHistoricalObservations().Result;
+
             // Get closest site
             GeoCoordinate coordinate = new GeoCoordinate(51.508363, -0.163006);
             Location location = client.GetClosestSite(coordinate).Result;
