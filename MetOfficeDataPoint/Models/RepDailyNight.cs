@@ -27,10 +27,10 @@ namespace MetOfficeDataPoint.Models
         public string Visibility { get; set; }
 
         [JsonProperty("Nm")]
-        public int NightMaximumTemperature { get; set; }
+        public int NightMinimumTemperature { get; set; }
 
         [JsonProperty("FNm")]
-        public int FeelsLikeNightMaximumTemperature { get; set; }
+        public int FeelsLikeNightMinimumTemperature { get; set; }
 
         [JsonProperty("W")]
         public int WeatherType { get; set; }
