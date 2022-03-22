@@ -1,21 +1,17 @@
 ﻿using MetOfficeDataPoint.Helpers;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text.Json.Serialization;
 
 namespace MetOfficeDataPoint.Models
 {
     public class PeriodDaily
     {
-        [JsonProperty("type")]
+        [JsonPropertyName("type")]
         public string Type { get; set; }
 
-        [JsonProperty("value")]
+        [JsonPropertyName("value")]
         public string Value { get; set; }
 
-        [JsonProperty("Rep")]
+        [JsonPropertyName("Rep")]
         [JsonConverter(typeof(DayNightConverter<RepDaily>))]
         public RepDaily Rep { get; set; }
     }

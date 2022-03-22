@@ -1,32 +1,28 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Text.Json.Serialization;
 
 namespace MetOfficeDataPoint.Models
 {
     public class Location
     {
-        [JsonProperty("elevation")]
+        [JsonPropertyName("elevation")]
         public double Elevation { get; set; }
 
-        [JsonProperty("id")]
+        [JsonPropertyName("id")]
         public int ID { get; set; }
 
-        [JsonProperty("latitude")]
+        [JsonPropertyName("latitude")]
         public double Latitude { get; set; }
 
-        [JsonProperty("longitude")]
+        [JsonPropertyName("longitude")]
         public double Longitude { get; set; }
 
-        [JsonProperty("name")]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
 
-        [JsonProperty("region")]
+        [JsonPropertyName("region")]
         public string Region { get; set; }
 
-        [JsonProperty("unitaryAuthArea")]
+        [JsonPropertyName("unitaryAuthArea")]
         public string UnitaryAuthorityArea { get; set; }
     }
 }

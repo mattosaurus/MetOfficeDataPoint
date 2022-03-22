@@ -1,20 +1,16 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Text.Json.Serialization;
 
 namespace MetOfficeDataPoint.Models
 {
     public class Param
     {
-        [JsonProperty("name")]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
 
-        [JsonProperty("units")]
+        [JsonPropertyName("units")]
         public string Units { get; set; }
 
-        [JsonProperty("$")]
+        [JsonPropertyName("$")]
         public string Description { get; set; }
     }
 }

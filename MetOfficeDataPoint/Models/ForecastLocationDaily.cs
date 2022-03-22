@@ -1,36 +1,31 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using MetOfficeDataPoint.Helpers;
+﻿using System.Text.Json.Serialization;
 
 namespace MetOfficeDataPoint.Models
 {
     public class ForecastLocationDaily
     {
-        [JsonProperty("i")]
+        [JsonPropertyName("i")]
         public int LocationId { get; set; }
 
-        [JsonProperty("lat")]
+        [JsonPropertyName("lat")]
         public double Latitude { get; set; }
 
-        [JsonProperty("lon")]
+        [JsonPropertyName("lon")]
         public double Longitude { get; set; }
 
-        [JsonProperty("name")]
+        [JsonPropertyName("name")]
         public string LocationName { get; set; }
 
-        [JsonProperty("country")]
+        [JsonPropertyName("country")]
         public string Country { get; set; }
 
-        [JsonProperty("continent")]
+        [JsonPropertyName("continent")]
         public string Continent { get; set; }
 
-        [JsonProperty("elevation")]
+        [JsonPropertyName("elevation")]
         public double Elevation { get; set; }
 
-        [JsonProperty("Period")]
+        [JsonPropertyName("Period")]
         public List<PeriodDaily> Period { get; set; }
     }
 }

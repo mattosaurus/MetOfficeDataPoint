@@ -1,13 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.16
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetOfficeDataPoint", "MetOfficeDataPoint\MetOfficeDataPoint.csproj", "{24B3493E-6FB1-4DDB-957E-90E1AA186A24}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetOfficeDataPointTestCore", "MetOfficeDataPointTestCore\MetOfficeDataPointTestCore.csproj", "{C83EC812-AADF-42AE-8D57-DC4A3A3D94FF}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetOfficeDataPointTest461", "MetOfficeDataPointTest461\MetOfficeDataPointTest461.csproj", "{1C9F118D-7914-43FD-991E-95722131552A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetOfficeDataPoint", "MetOfficeDataPoint\MetOfficeDataPoint.csproj", "{AF8CBE4B-7CB7-43BD-8145-62A1A832981C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,20 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{24B3493E-6FB1-4DDB-957E-90E1AA186A24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{24B3493E-6FB1-4DDB-957E-90E1AA186A24}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{24B3493E-6FB1-4DDB-957E-90E1AA186A24}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{24B3493E-6FB1-4DDB-957E-90E1AA186A24}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C83EC812-AADF-42AE-8D57-DC4A3A3D94FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C83EC812-AADF-42AE-8D57-DC4A3A3D94FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C83EC812-AADF-42AE-8D57-DC4A3A3D94FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C83EC812-AADF-42AE-8D57-DC4A3A3D94FF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1C9F118D-7914-43FD-991E-95722131552A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1C9F118D-7914-43FD-991E-95722131552A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1C9F118D-7914-43FD-991E-95722131552A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1C9F118D-7914-43FD-991E-95722131552A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF8CBE4B-7CB7-43BD-8145-62A1A832981C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF8CBE4B-7CB7-43BD-8145-62A1A832981C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF8CBE4B-7CB7-43BD-8145-62A1A832981C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF8CBE4B-7CB7-43BD-8145-62A1A832981C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {78DD7356-33E3-469A-8B70-0E6DA79B792C}
 	EndGlobalSection
 EndGlobal

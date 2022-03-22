@@ -1,47 +1,43 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Text.Json.Serialization;
 
 namespace MetOfficeDataPoint.Models
 {
     public class Rep3Hourly
     {
-        [JsonProperty("D")]
+        [JsonPropertyName("D")]
         public string WindDirection { get; set; }
 
-        [JsonProperty("F")]
+        [JsonPropertyName("F")]
         public int FeelsLikeTemperature { get; set; }
 
-        [JsonProperty("G")]
+        [JsonPropertyName("G")]
         public int WindGust { get; set; }
 
-        [JsonProperty("H")]
+        [JsonPropertyName("H")]
         public double ScreenRelativeHumidity { get; set; }
 
-        [JsonProperty("Pp")]
+        [JsonPropertyName("Pp")]
         public int PrecipitationProbability { get; set; }
 
-        [JsonProperty("S")]
+        [JsonPropertyName("S")]
         public int WindSpeed { get; set; }
 
-        [JsonProperty("T")]
+        [JsonPropertyName("T")]
         public double Temperature { get; set; }
 
-        [JsonProperty("V")]
+        [JsonPropertyName("V")]
         public string Visibility { get; set; }
 
-        [JsonProperty("W")]
+        [JsonPropertyName("W")]
         public int WeatherType { get; set; }
 
-        [JsonProperty("U")]
+        [JsonPropertyName("U")]
         public int MaximumUvIndex { get; set; }
 
         /// <summary>
         /// The value of a Rep object ($ in the JSON representation) denotes the number of minutes after midnight GMT on the day represented by the Period object in which the Rep object is found
         /// </summary>
-        [JsonProperty("$")]
+        [JsonPropertyName("$")]
         public int MinutesAfterMidnight { get; set; }
     }
 }

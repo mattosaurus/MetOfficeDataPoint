@@ -1,44 +1,40 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Text.Json.Serialization;
 
 namespace MetOfficeDataPoint.Models
 {
     public class RepDailyDay
     {
-        [JsonProperty("D")]
+        [JsonPropertyName("D")]
         public string WindDirection { get; set; }
 
-        [JsonProperty("Gn")]
+        [JsonPropertyName("Gn")]
         public int WindGustNoon { get; set; }
 
-        [JsonProperty("Hn")]
+        [JsonPropertyName("Hn")]
         public int ScreenRelativeHumidityNoon { get; set; }
 
-        [JsonProperty("PPd")]
+        [JsonPropertyName("PPd")]
         public int PrecipitationProbabilityDay { get; set; }
 
-        [JsonProperty("S")]
+        [JsonPropertyName("S")]
         public int WindSpeed { get; set; }
 
-        [JsonProperty("V")]
+        [JsonPropertyName("V")]
         public string Visibility { get; set; }
 
-        [JsonProperty("Dm")]
+        [JsonPropertyName("Dm")]
         public int DayMaximumTemperature { get; set; }
 
-        [JsonProperty("FDm")]
+        [JsonPropertyName("FDm")]
         public int FeelsLikeDayMaximumTemperature { get; set; }
 
-        [JsonProperty("W")]
+        [JsonPropertyName("W")]
         public int WeatherType { get; set; }
 
-        [JsonProperty("U")]
+        [JsonPropertyName("U")]
         public int MaxUVIndex { get; set; }
 
-        [JsonProperty("$")]
+        [JsonPropertyName("$")]
         public string Type { get; set; }
     }
 }
