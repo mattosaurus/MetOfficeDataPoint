@@ -1,4 +1,5 @@
 ﻿using MetOfficeDataPoint.Extensions;
+using MetOfficeDataPoint.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -49,7 +50,7 @@ namespace MetOfficeDataPoint.Debug
             // Create service provider
             Log.Information("Building service provider");
             IServiceProvider serviceProvider = serviceCollection.BuildServiceProvider();
-
+            var weatherService = serviceProvider.GetService(typeof(IMetOfficeDataPointService));
             try
             {
                 Log.Information("Starting service");
@@ -84,8 +85,7 @@ namespace MetOfficeDataPoint.Debug
 
             // Add API client
             serviceCollection.AddMetOfficeDataPointService(
-                "http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/json/",
-                "78b6eede-0692-433c-a35b-154332355218"
+                "API Key"
                 );
 
             // Add app
