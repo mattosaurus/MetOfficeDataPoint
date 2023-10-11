@@ -22,6 +22,13 @@ namespace MetOfficeDataPoint.Services
             _options = options.Value;
         }
 
+        public MetOfficeDataPointService(HttpClient httpClient, ILogger<MetOfficeDataPointService> logger, IOptions<MetOfficeDataPointOptions> options)
+        {
+            _httpClient = httpClient;
+            _logger = logger;
+            _options = options.Value;
+        }
+
         public async Task<SiteListResponse> GetAllSitesAsync()
         {
             HttpRequestMessage request = CreateHttpRequestMessage(HttpMethod.Get, "wxfcs/all/json/sitelist", new Dictionary<string, string>()
